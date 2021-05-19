@@ -1,0 +1,47 @@
+h1 {
+  color: white;
+}
+
+p {
+  color: white;
+}
+
+.container {
+  margin-left: 100px;
+}
+.mylistrow {
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.recorow {
+  display: inline-block;
+}
+
+.img {
+  margin-left: 10px;
+}
+
+.title {
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.button {
+  text-align: center;
+  width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  margin-left: 10px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.mylistrow:hover button {
+  opacity: 1;
+}
+
+.recorow:hover button {
+  opacity: 1;
+}
