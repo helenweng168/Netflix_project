@@ -4,6 +4,7 @@ h1 {
 
 p {
   color: white;
+  text-align: center;
 }
 
 .container {
@@ -11,7 +12,7 @@ p {
 }
 .mylistrow {
   display: inline-block;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .recorow {
@@ -22,17 +23,27 @@ p {
   margin-left: 10px;
 }
 
+.img:hover {
+  display: inline-block;
+  transform: translateY(-5px);
+  transition: 0.3s ease;
+}
+
 .title {
   margin-left: 10px;
   font-size: 20px;
 }
 
 .button {
+  border: 0;
+  color: white;
+  font-weight: bold;
+  background-color: red;
   text-align: center;
   width: 100px;
   height: 30px;
-  border-radius: 5px;
-  margin-left: 10px;
+  border-radius: 2px;
+  margin-left: 45px;
   position: absolute;
   opacity: 0;
   transition: opacity 0.35s ease;
@@ -40,8 +51,10 @@ p {
 
 .mylistrow:hover button {
   opacity: 1;
+  cursor: pointer;
 }
 
 .recorow:hover button {
   opacity: 1;
+  cursor: pointer;
 }

@@ -9,6 +9,7 @@ function FetchingData() {
   const [indicator, setInd] = useState(0);
 
   useEffect(() => {
+    // get data
     axios.get("data.json").then((response) => {
       console.log(response);
       if (indicator === 0) {
@@ -18,13 +19,17 @@ function FetchingData() {
       }
     });
   });
+  //delete from mylist and add to recommendations
   const deleteItem = (id) => {
+    const newLists_reclist = reclists.concat(lists.find((x) => x.id === id));
+    setRecLists(newLists_reclist);
     setLists(lists.filter((i) => i.id !== id));
   };
+  //add to mylist
   const addItem = (id) => {
-    const newLists = lists.concat(reclists.find((x) => x.id === id));
+    const newLists_list = lists.concat(reclists.find((x) => x.id === id));
     //setLists({ lists: [lists, reclists.find((x) => x.id === id)] });
-    setLists(newLists);
+    setLists(newLists_list);
     setRecLists(reclists.filter((i) => i.id !== id));
   };
 
@@ -32,7 +37,7 @@ function FetchingData() {
     <div className="container">
       <div className="mylist">
         <div>
-          <h1>My List:</h1>
+          <h1>My List</h1>
         </div>
         {lists.map((l) => {
           return (
@@ -60,13 +65,13 @@ function FetchingData() {
       </div>
       <div className="recom">
         <div>
-          <h1>Recommendations:</h1>
+          <h1>Recommendations</h1>
         </div>
         {reclists.map((r) => {
           return (
             <div className="recorow">
               <div className="img">
-                <img src={r.img} alt="p1" />
+                <img src={r.img} alt="movies" />
               </div>
               <div className="title">
                 <p>{r.title}</p>
